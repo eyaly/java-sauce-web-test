@@ -14,6 +14,7 @@ import java.net.URL;
 
 public class BaseTest {
 
+    // mvn clean test -Dsurefire.suiteXmlFiles=testng.xml
     protected WebDriver driver;
     public static final String USERNAME = System.getenv("SAUCE_USERNAME");
     public static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
@@ -41,6 +42,17 @@ public class BaseTest {
         sauceOptions.setCapability("name", finalTestName);
         sauceOptions.setCapability("armRequired", armRequired);
         sauceOptions.setCapability("extendedDebugging", extendedDebugging);
+        java.time.LocalDateTime now = java.time.LocalDateTime.now();
+        int hour = now.getHour();
+        int minute = now.getMinute();
+        int roundedMinute = (int) (Math.round((double) minute / 5.0) * 5);
+        if (roundedMinute == 60) {
+            hour = (hour + 1) % 24;
+            roundedMinute = 0;
+        }
+        String datePart = java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd-").format(now);
+        String buildId = datePart + String.format("%02d%02d", hour, roundedMinute);
+        sauceOptions.setCapability("build", buildId);
         caps.setCapability("sauce:options", sauceOptions);
 
         URL url = new URL(SAUCE_URL);

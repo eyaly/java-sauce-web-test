@@ -26,13 +26,13 @@
         </classes>
     </test>
 
-    <test name="LoginTest_Chrome_macOS14 extendedDebugging">
+    <test name="LoginTest_Chrome_macOS14 2">
         <parameter name="platformName" value="macOS 14"/>
         <parameter name="browserName" value="chrome"/>
         <parameter name="browserVersion" value="142"/>
-        <parameter name="name" value="LoginTest_Chrome_macOS14_extendedDebugging"/>
+        <parameter name="name" value="LoginTest_Chrome_macOS14_2"/>
         <parameter name="armRequired" value="true"/>
-        <parameter name="extendedDebugging" value="true"/>
+        <parameter name="extendedDebugging" value="false"/>
         <classes>
             <class name="com.saucelabs.test.LoginTest"/>
         </classes>
