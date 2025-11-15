@@ -1,0 +1,78 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SauceLabsDemo" verbose="1" parallel="tests" thread-count="6">
+
+    <test name="LoginTest_Chrome_macOS14">
+        <parameter name="platformName" value="macOS 14"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserVersion" value="142"/>
+        <parameter name="name" value="LoginTest_Chrome_macOS14"/>
+        <parameter name="armRequired" value="true"/>
+        <parameter name="extendedDebugging" value="false"/>
+        <classes>
+            <class name="com.saucelabs.test.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTest_Chrome_macOS13">
+        <parameter name="platformName" value="macOS 13"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserVersion" value="142"/>
+        <parameter name="name" value="LoginTest_Chrome_macOS13"/>
+        <parameter name="armRequired" value="false"/>
+        <parameter name="extendedDebugging" value="false"/>
+        <classes>
+            <class name="com.saucelabs.test.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTest_Chrome_macOS14 extendedDebugging">
+        <parameter name="platformName" value="macOS 14"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserVersion" value="142"/>
+        <parameter name="name" value="LoginTest_Chrome_macOS14_extendedDebugging"/>
+        <parameter name="armRequired" value="true"/>
+        <parameter name="extendedDebugging" value="true"/>
+        <classes>
+            <class name="com.saucelabs.test.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTest_Chrome_macOS13 extendedDebugging">
+        <parameter name="platformName" value="macOS 13"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserVersion" value="142"/>
+        <parameter name="name" value="LoginTest_Chrome_macOS13_extendedDebugging"/>
+        <parameter name="armRequired" value="false"/>
+        <parameter name="extendedDebugging" value="true"/>
+        <classes>
+            <class name="com.saucelabs.test.LoginTest"/>
+        </classes>
+    </test>
+
+
+    <test name="LoginTest_Chrome_Win11">
+        <parameter name="platformName" value="Windows 11"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserVersion" value="142"/>
+        <parameter name="name" value="LoginTest_Chrome_Win11"/>
+        <parameter name="armRequired" value="false"/>
+        <parameter name="extendedDebugging" value="false"/>
+        <classes>
+            <class name="com.saucelabs.test.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTest_Chrome_Win11 extendedDebugging">
+        <parameter name="platformName" value="Windows 11"/>
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserVersion" value="142"/>
+        <parameter name="name" value="LoginTest_Chrome_Win11_extendedDebugging"/>
+        <parameter name="armRequired" value="false"/>
+        <parameter name="extendedDebugging" value="true"/>
+        <classes>
+            <class name="com.saucelabs.test.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
